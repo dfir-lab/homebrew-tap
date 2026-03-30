@@ -11,7 +11,7 @@ class DfirCli < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.2/dfir-cli_0.1.2_darwin_amd64.tar.gz"
-      sha256 "76ac9c9bd90b23cd28ae006602eccd8190a71ee480032d4e441aa720b595e627"
+      sha256 "04b68a495c6a98e7104f48c6484d3fa40707b794479ee206934f3fdfadb0ba8f"
 
       define_method(:install) do
         bin.install "dfir-cli"
@@ -23,7 +23,7 @@ class DfirCli < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.2/dfir-cli_0.1.2_darwin_arm64.tar.gz"
-      sha256 "71b8c8ea569c69701eefe341e0874251a78fbf6650dbafeea4043ca129e39568"
+      sha256 "b6ba3c54aff367a85e9f434723941ac67a86bebf11b13f6bcd556907d42ef673"
 
       define_method(:install) do
         bin.install "dfir-cli"
@@ -38,7 +38,7 @@ class DfirCli < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.2/dfir-cli_0.1.2_linux_amd64.tar.gz"
-      sha256 "5ee67d23ceedce3bb3246764d7dd08e707de4b7b3a5cdf89532180ba9565c5df"
+      sha256 "b0c33b41110572bd4909106e6b31841c6ab8ec4e5e03c1ee6dba29229f9ebeee"
       define_method(:install) do
         bin.install "dfir-cli"
 
@@ -49,7 +49,7 @@ class DfirCli < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.2/dfir-cli_0.1.2_linux_arm64.tar.gz"
-      sha256 "de878556b695beaa5a52ae79b3d516984be7b6f9207ec53e34010a7d8e5264cd"
+      sha256 "b63c53c9e748151f5a87526ad9a6eda3ecd02a8ae81f890afde2fd7d897de67f"
       define_method(:install) do
         bin.install "dfir-cli"
 
