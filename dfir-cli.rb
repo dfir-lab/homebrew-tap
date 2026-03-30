@@ -5,13 +5,13 @@
 class DfirCli < Formula
   desc "DFIR Lab CLI — digital forensics and incident response toolkit"
   homepage "https://dfir-lab.ch"
-  version "0.1.0"
-  license "MIT"
+  version "0.1.1"
+  license "Proprietary"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.0/dfir-cli_0.1.0_darwin_amd64.tar.gz"
-      sha256 "6815f2b72c0d44731fb45a94423a631b7eb3a5c5570599b4192016064defb5dd"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.1/dfir-cli_0.1.1_darwin_amd64.tar.gz"
+      sha256 "de28ad27a07f33306995e15f6f51fb9475eae83fd3559063dd8cbbb6fdf5ea0b"
 
       define_method(:install) do
         bin.install "dfir-cli"
@@ -22,8 +22,8 @@ class DfirCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.0/dfir-cli_0.1.0_darwin_arm64.tar.gz"
-      sha256 "5f0053eee66cc36cda4b837803883878274a723868fdcfb61b00467c7a148e6b"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.1/dfir-cli_0.1.1_darwin_arm64.tar.gz"
+      sha256 "fa200fcfa83e39fc355cce485f5da83a204c1d4e9add420564c5ea6389592c1d"
 
       define_method(:install) do
         bin.install "dfir-cli"
@@ -37,8 +37,8 @@ class DfirCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.0/dfir-cli_0.1.0_linux_amd64.tar.gz"
-      sha256 "9e6d1531a00f1278fb7b1a9cb91e94cd9fe8e75b0bbfaf57898784acf9636667"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.1/dfir-cli_0.1.1_linux_amd64.tar.gz"
+      sha256 "06cd3f8ea945f7b7fe26d3694d5f66e9406513884238c02d4fbdd7b326f8690d"
       define_method(:install) do
         bin.install "dfir-cli"
 
@@ -48,8 +48,8 @@ class DfirCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.0/dfir-cli_0.1.0_linux_arm64.tar.gz"
-      sha256 "1353d44f097a7e5956e9e6df11107f64a0f515afca6daf0c5d4870711d01abd6"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.1/dfir-cli_0.1.1_linux_arm64.tar.gz"
+      sha256 "be50d5f5519dfd6f4412c6ba4397f4112425ed45b6dd1110902b3f3ee4dc743b"
       define_method(:install) do
         bin.install "dfir-cli"
 
@@ -58,6 +58,24 @@ class DfirCli < Formula
         fish_completion.install "completions/dfir-cli.fish"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      To get started, make sure Homebrew's bin directory is in your PATH:
+
+        export PATH="$(brew --prefix)/bin:$PATH"
+
+      Then reload your shell session:
+
+        exec $SHELL -l
+
+      Configure your API key:
+
+        dfir-cli config init
+
+      Get your API key from https://dfir-lab.ch
+    EOS
   end
 
   test do
