@@ -5,13 +5,13 @@
 class DfirCli < Formula
   desc "DFIR Lab CLI — digital forensics and incident response toolkit"
   homepage "https://dfir-lab.ch"
-  version "0.1.5"
+  version "0.1.6"
   license "Proprietary"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.5/dfir-cli_0.1.5_darwin_amd64.tar.gz"
-      sha256 "eb2661cd72c3c72fc24af196d5465ad3b47abb01e0711617c38a2bbe8fe68bc1"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.6/dfir-cli_0.1.6_darwin_amd64.tar.gz"
+      sha256 "a16f41f732017397949b9665c5ce02de03f2eccc913c212b776a311c9c48a8bf"
 
       define_method(:install) do
         bin.install "dfir-cli"
@@ -23,8 +23,8 @@ class DfirCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.5/dfir-cli_0.1.5_darwin_arm64.tar.gz"
-      sha256 "1fe16413baeab45e52c5315116fcb94580ef87f6d29e8623c1ac1aadb750303c"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.6/dfir-cli_0.1.6_darwin_arm64.tar.gz"
+      sha256 "6ecc7e4bc3f66fdb933f14cb3a9e951083492d64c3ec095aaceb47746bb18d0f"
 
       define_method(:install) do
         bin.install "dfir-cli"
@@ -39,8 +39,8 @@ class DfirCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.5/dfir-cli_0.1.5_linux_amd64.tar.gz"
-      sha256 "077a00e96fbbf501db23436d7b6b1f4c0c96dcb07563be89031b3c1e30235a46"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.6/dfir-cli_0.1.6_linux_amd64.tar.gz"
+      sha256 "4e0d300ef97668a2584ba40ac8dcc65f439d14930b733fe9cfd011f9190d92ef"
       define_method(:install) do
         bin.install "dfir-cli"
 
@@ -51,8 +51,8 @@ class DfirCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.5/dfir-cli_0.1.5_linux_arm64.tar.gz"
-      sha256 "4b006c9adb51260aae091be315caacdb8a0f17d07b7236c731426a7b8989343a"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.6/dfir-cli_0.1.6_linux_arm64.tar.gz"
+      sha256 "991df7b45a8c72ece86d1c8f6ea9057fd7157c36f091ec9e8f0bcfac5bb540d7"
       define_method(:install) do
         bin.install "dfir-cli"
 
