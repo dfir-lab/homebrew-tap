@@ -5,13 +5,13 @@
 class DfirCli < Formula
   desc "DFIR Lab CLI — digital forensics and incident response toolkit"
   homepage "https://dfir-lab.ch"
-  version "0.1.4"
+  version "0.1.5"
   license "Proprietary"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.4/dfir-cli_0.1.4_darwin_amd64.tar.gz"
-      sha256 "c85ba84b01328e88c37c65bb08bc30fed2ee917391534d11b83c00ae22149bff"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.5/dfir-cli_0.1.5_darwin_amd64.tar.gz"
+      sha256 "eb2661cd72c3c72fc24af196d5465ad3b47abb01e0711617c38a2bbe8fe68bc1"
 
       define_method(:install) do
         bin.install "dfir-cli"
@@ -19,11 +19,12 @@ class DfirCli < Formula
         bash_completion.install "completions/dfir-cli.bash" => "dfir-cli"
         zsh_completion.install "completions/_dfir-cli"
         fish_completion.install "completions/dfir-cli.fish"
+        man1.install Dir["man/*.1"]
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.4/dfir-cli_0.1.4_darwin_arm64.tar.gz"
-      sha256 "3159936e5d21ed4ea3f043f328ed1ce3a82f2814894aaa348f4498371d871213"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.5/dfir-cli_0.1.5_darwin_arm64.tar.gz"
+      sha256 "1fe16413baeab45e52c5315116fcb94580ef87f6d29e8623c1ac1aadb750303c"
 
       define_method(:install) do
         bin.install "dfir-cli"
@@ -31,31 +32,34 @@ class DfirCli < Formula
         bash_completion.install "completions/dfir-cli.bash" => "dfir-cli"
         zsh_completion.install "completions/_dfir-cli"
         fish_completion.install "completions/dfir-cli.fish"
+        man1.install Dir["man/*.1"]
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.4/dfir-cli_0.1.4_linux_amd64.tar.gz"
-      sha256 "2e255ba63e31d131e6dc358169410f3e16c08dac5a09d1123eeafff24023671d"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.5/dfir-cli_0.1.5_linux_amd64.tar.gz"
+      sha256 "077a00e96fbbf501db23436d7b6b1f4c0c96dcb07563be89031b3c1e30235a46"
       define_method(:install) do
         bin.install "dfir-cli"
 
         bash_completion.install "completions/dfir-cli.bash" => "dfir-cli"
         zsh_completion.install "completions/_dfir-cli"
         fish_completion.install "completions/dfir-cli.fish"
+        man1.install Dir["man/*.1"]
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.4/dfir-cli_0.1.4_linux_arm64.tar.gz"
-      sha256 "3103e69fedbd840495d5ca48d1c4fc2e440b1abda978f4731d5da6d0d2f3e53e"
+      url "https://github.com/dfir-lab/dfir-cli-releases/releases/download/v0.1.5/dfir-cli_0.1.5_linux_arm64.tar.gz"
+      sha256 "4b006c9adb51260aae091be315caacdb8a0f17d07b7236c731426a7b8989343a"
       define_method(:install) do
         bin.install "dfir-cli"
 
         bash_completion.install "completions/dfir-cli.bash" => "dfir-cli"
         zsh_completion.install "completions/_dfir-cli"
         fish_completion.install "completions/dfir-cli.fish"
+        man1.install Dir["man/*.1"]
       end
     end
   end
